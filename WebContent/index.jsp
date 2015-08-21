@@ -19,8 +19,8 @@
            <ul class="button-group">
              <li><a href="#" class="button">Link 1</a></li>
              <li><a href="#" class="button">Link 2</a></li>
-             <li><a href="#" class="button">Link 3</a></li>
-             <li><a href="#" class="button">Classificados</a></li>
+             <li><a href="#" class="button">Logar</a></li>
+             <li><a href="formularioRegistro.jsp" class="button">Registre-se</a></li>
             </ul>
           </div>
           <h1>JJornal</h1>
