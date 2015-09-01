@@ -1,5 +1,7 @@
 package br.ufc.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +21,17 @@ public class User {
 	@Column
 	private String email;
 	
+	private List<Papel> papeis;
 	
+	
+	public List<Papel> getPapeis() {
+		return papeis;
+	}
+
+	public void setPapeis(List<Papel> papeis) {
+		this.papeis = papeis;
+	}
+
 	public Long getId() {
 		return id;
 	}

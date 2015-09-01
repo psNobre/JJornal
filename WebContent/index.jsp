@@ -1,3 +1,7 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
+<%@page import="br.ufc.model.User"%>
+<%@page import="java.util.List"%>
+<%@page import="br.ufc.dao.UserDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -23,8 +27,8 @@
 	<section class="top-bar-section">
 	<ul class="right">
 		<li class="active"><a href="index.jsp">Home</a></li>
-		<li><a href="formularioLogin.jsp">Entrar</a></li>
-		<li><a href="formularioRegistro.jsp">Registrar-se</a></li>
+		<li><a href="formlogin.jsp">Entrar</a></li>
+		<li><a href="formregistro.jsp">Registrar-se</a></li>
 	</ul>
 	</section> </nav>
 
@@ -37,117 +41,113 @@
 			class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4"
 			data-clearing>
 			<li><a href="#"><img data-caption="caption here..."
-					src="http://placehold.it/800x500&text=[img]"><br>
-				<span style="font-size: small">Leia mais...</span></a></li>
+					src="http://placehold.it/800x500&text=[img]"><br> <span
+					style="font-size: small">Leia mais...</span></a></li>
 			<li><a href="#"><img data-caption="caption 2 here..."
-					src="http://placehold.it/800x500&text=[img]"><br>
-				<span style="font-size: small">Leia mais...</span></a></li>
+					src="http://placehold.it/800x500&text=[img]"><br> <span
+					style="font-size: small">Leia mais...</span></a></li>
 			<li><a href="#"><img data-caption="caption 3 here..."
-					src="http://placehold.it/800x500&text=[img]"><br>
-				<span style="font-size: small">Leia mais...</span></a></li>
+					src="http://placehold.it/800x500&text=[img]"><br> <span
+					style="font-size: small">Leia mais...</span></a></li>
 			<li><a href="#"><img data-caption="caption 4 here..."
-					src="http://placehold.it/800x500&text=[img]"><br>
-				<span style="font-size: small">Leia mais...</span></a></li>
+					src="http://placehold.it/800x500&text=[img]"><br> <span
+					style="font-size: small">Leia mais...</span></a></li>
 			<li><a href="#"><img data-caption="caption here..."
-					src="http://placehold.it/800x500&text=[img]"><br>
-				<span style="font-size: small">Leia mais...</span></a></li>
+					src="http://placehold.it/800x500&text=[img]"><br> <span
+					style="font-size: small">Leia mais...</span></a></li>
 			<li><a href="#"><img data-caption="caption 2 here..."
-					src="http://placehold.it/800x500&text=[img]"><br>
-				<span style="font-size: small">Leia mais...</span></a></li>
+					src="http://placehold.it/800x500&text=[img]"><br> <span
+					style="font-size: small">Leia mais...</span></a></li>
 			<li><a href="#"><img data-caption="caption 3 here..."
-					src="http://placehold.it/800x500&text=[img]"><br>
-				<span style="font-size: small">Leia mais...</span></a></li>
+					src="http://placehold.it/800x500&text=[img]"><br> <span
+					style="font-size: small">Leia mais...</span></a></li>
 			<li><a href="#"><img data-caption="caption 4 here..."
-					src="http://placehold.it/800x500&text=[img]"><br>
-				<span style="font-size: small">Leia mais...</span></a></li>
+					src="http://placehold.it/800x500&text=[img]"><br> <span
+					style="font-size: small">Leia mais...</span></a></li>
 			<li><a href="#"><img data-caption="caption here..."
-					src="http://placehold.it/800x500&text=[img]"><br>
-				<span style="font-size: small">Leia mais...</span></a></li>
+					src="http://placehold.it/800x500&text=[img]"><br> <span
+					style="font-size: small">Leia mais...</span></a></li>
 			<li><a href="#"><img data-caption="caption 2 here..."
-					src="http://placehold.it/800x500&text=[img]"><br>
-				<span style="font-size: small">Leia mais...</span></a></li>
+					src="http://placehold.it/800x500&text=[img]"><br> <span
+					style="font-size: small">Leia mais...</span></a></li>
 			<li><a href="#"><img data-caption="caption 3 here..."
-					src="http://placehold.it/800x500&text=[img]"><br>
-				<span style="font-size: small">Leia mais...</span></a></li>
+					src="http://placehold.it/800x500&text=[img]"><br> <span
+					style="font-size: small">Leia mais...</span></a></li>
 			<li><a href="#"><img data-caption="caption 4 here..."
-					src="http://placehold.it/800x500&text=[img]"><br>
-				<span style="font-size: small">Leia mais...</span></a></li>
+					src="http://placehold.it/800x500&text=[img]"><br> <span
+					style="font-size: small">Leia mais...</span></a></li>
 		</ul>
-	</div>
 
-	<div class="row">
-		<hr>
-		<div class="large-8 columns">
-			<h4>Sobre</h4>
-			<p>Este é o Jornal Jornal, o jornal que é muito mais jornal do
-				que o jornal que você compra na banca de jornal.</p>
-			<i class="fi-social-twitter"></i>
-		</div>
-
-		<div class="large-4 columns">
-			<img src="http://placehold.it/800x500&text=[img]">
-		</div>
-	</div>
-
-	<div class="row">
-		<hr>
-		<div class="large-12 columns">
-			<h4>Equipe</h4>
-			<p>Nossos editores e jornalistas.</p>
-
-			<ul
-				class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4"
-				data-clearing>
-				<li><a href="#"><img data-caption="caption here..."
-						src="http://placehold.it/800x500&text=[img]"></a></li>
-				<li><a href="#"><img data-caption="caption 2 here..."
-						src="http://placehold.it/800x500&text=[img]"></a></li>
-				<li><a href="#"><img data-caption="caption 3 here..."
-						src="http://placehold.it/800x500&text=[img]"></a></li>
-				<li><a href="#"><img data-caption="caption 4 here..."
-						src="http://placehold.it/800x500&text=[img]"></a></li>
-			</ul>
-			<a href="#"><br>
-			<span style="font-size: small">Ver mais...</span></a>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="large-12 columns">
-			<hr>
-			<h4>Contato</h4>
-			<div class="large-4 columns">Email: pedro.savio.nobre@gmail.com
-			</div>
-			<div class="large-4 columns">Telefone: +55 (85)3225-6141</div>
-			<div class="large-4 columns">Celular: +55 (85)99712-8174</div>
-		</div>
-	</div>
-
-	<footer class="row">
-	<div class="large-12 columns">
-		<hr />
 		<div class="row">
-			<div class="large-6 columns">
-				<p>
-					© Copyright 2015 <i>Pedro Sávio de Oliveira Nobre</i>.
-				</p>
+			<hr>
+			<div class="large-8 columns">
+				<h4>Sobre</h4>
+				<p>Este é o Jornal Jornal, o jornal que é muito mais jornal do
+					que o jornal que você compra na banca de jornal.</p>
+				<i class="fi-social-twitter"></i>
 			</div>
-			<div class="large-6 columns">
-				<ul class="inline-list right">
-					<li><a href="https://www.facebook.com/pedro.savio.3"> <img
-							src="img/facebook.png" width="40" height="40"></a></li>
-					<li><a
-						href="https://plus.google.com/u/0/117166788613143326786/posts"><img
-							src="img/googleplus.png" width="40" height="40"></a></li>
-					<li><a href="https://www.linkedin.com/in/psnobre"><img
-							src="img/linkedin.png" width="40" height="40"></a></li>
-					<li><a href="https://github.com/psNobre/JJornal"><img
-							src="img/github.png" width="40" height="40"></a></li>
+
+			<div class="large-4 columns">
+				<img src="http://placehold.it/800x500&text=[img]">
+			</div>
+
+		</div>
+
+		<div class="row">
+			<hr>
+			<div class="large-12 columns">
+				<h4>Equipe</h4>
+				<p>Nossos editores e jornalistas.</p>
+
+				<ul
+					class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4"
+					data-clearing>
+					<li><a href="#"><img data-caption="caption here..."
+							src="http://placehold.it/800x500&text=[img]"></a></li>
+					<li><a href="#"><img data-caption="caption 2 here..."
+							src="http://placehold.it/800x500&text=[img]"></a></li>
+					<li><a href="#"><img data-caption="caption 3 here..."
+							src="http://placehold.it/800x500&text=[img]"></a></li>
+					<li><a href="#"><img data-caption="caption 4 here..."
+							src="http://placehold.it/800x500&text=[img]"></a></li>
 				</ul>
 			</div>
-		</div>
-	</div>
-	</footer>
 
+			<div class="row">
+				<div class="large-12 columns">
+					<hr>
+					<h4>Contato</h4>
+					<div class="large-4 columns">Email:
+						pedro.savio.nobre@gmail.com</div>
+					<div class="large-4 columns">Telefone: +55 (85)3225-6141</div>
+					<div class="large-4 columns">Celular: +55 (85)99712-8174</div>
+				</div>
+			</div>
+
+			<footer class="row">
+			<div class="large-12 columns">
+				<hr />
+				<div class="row">
+					<div class="large-6 columns">
+						<p>
+							© Copyright 2015 <i>Pedro Sávio de Oliveira Nobre</i>.
+						</p>
+					</div>
+					<div class="large-6 columns">
+						<ul class="inline-list right">
+							<li><a href="https://www.facebook.com/pedro.savio.3"> <img
+									src="img/facebook.png" width="40" height="40"></a></li>
+							<li><a
+								href="https://plus.google.com/u/0/117166788613143326786/posts"><img
+									src="img/googleplus.png" width="40" height="40"></a></li>
+							<li><a href="https://www.linkedin.com/in/psnobre"><img
+									src="img/linkedin.png" width="40" height="40"></a></li>
+							<li><a href="https://github.com/psNobre/JJornal"><img
+									src="img/github.png" width="40" height="40"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			</footer>
 </body>
 </html>

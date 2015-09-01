@@ -1,16 +1,23 @@
 package br.ufc.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import br.ufc.dao.interfaces.DAO;
+import br.ufc.dao.interfaces.iUserDAO;
 import br.ufc.factory.JPAUtilFactory;
 import br.ufc.logger.Logger;
 import br.ufc.model.User;
 
-public class UserDAO implements DAO<User> {
+public class UserDAO implements iUserDAO {
 	private static final String TAG = UserDAO.class.getName();
+	
+
 	@Override
-	public User findById(Object id) {
+	public User findUserByLogin(String login) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -22,27 +29,9 @@ public class UserDAO implements DAO<User> {
 		entityManager.getTransaction().begin();
 		entityManager.persist(entidade);
 		entityManager.getTransaction().commit();
-		Logger.printLog(TAG, "Usuário persistido com sucesso...");
+		Logger.printLog(TAG, "Usuário persistido com sucesso..."); 
 		
 		entityManager.close();
 	}
-
-	@Override
-	public void remover(User entidade) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void listar() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void alterar(User entidade) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 }
