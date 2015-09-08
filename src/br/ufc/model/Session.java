@@ -38,9 +38,5 @@ public class Session {
 	public String toString() {
 		return "Session [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + "]";
 	}
-	
-	
-	
-	
-	
+
 }

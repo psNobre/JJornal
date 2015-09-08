@@ -3,14 +3,14 @@ package br.ufc.control;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.persistence.PersistenceException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ufc.dao.UserDAO;
+import br.ufc.control.adduser.AddUserSystem;
+import br.ufc.control.adduser.UserComoLeitor;
 import br.ufc.model.User;
 
 /**
@@ -46,10 +46,10 @@ public class ADDUserServlet extends HttpServlet {
 		user.setLogin(login);
 		user.setSenha(senha);
 
-		UserDAO dao = new UserDAO();
-		dao.salvar(user);
+		AddUserSystem addUserSystem = new UserComoLeitor();
+		String redirect = addUserSystem.addUser(user);
 
-		response.sendRedirect("index.jsp");
+		response.sendRedirect(redirect);
 	}
 
 	/**

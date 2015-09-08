@@ -9,5 +9,4 @@ public interface DAO<E> {
 	public void remover(E entidade);
 	public List<E> listar();
 	public void alterar(E entidade);
-
 }

@@ -1,44 +1,38 @@
 package br.ufc.model;
 
+
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 
 @Entity(name = "usuario")
 public class User {
-	@Id @GeneratedValue
-	private Long id;
 	
-	@Column
+	@Id
+	@Column(name="login")
 	private String login;
-	@Column
+	
+	@Column(name="senha")
 	private String senha;
-	@Column
+	
+	@Column(name="nome")
 	private String nome;
-	@Column
+	
+	@Column(name="email")
 	private String email;
 	
+	@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="user") 
 	private List<Papel> papeis;
-	
-	
-	public List<Papel> getPapeis() {
-		return papeis;
-	}
 
-	public void setPapeis(List<Papel> papeis) {
-		this.papeis = papeis;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+	/** 
+	 * Métodos Getters Setters e toString
+	 * */
 
 	public String getLogin() {
 		return login;
@@ -72,9 +66,19 @@ public class User {
 		this.email = email;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", login=" + login + ", senha=" + senha + ", nome=" + nome + ", email=" + email + "]";
+	public List<Papel> getPapeis() {
+		return papeis;
 	}
 
+	public void setPapeis(List<Papel> papeis) {
+		this.papeis = papeis;
+	}
+
+	@Override
+	public String toString() {
+		return "User [login=" + login + ", senha=" + senha + ", nome=" + nome + ", email=" + email
+				+"]";
+	}
+
+	
 }

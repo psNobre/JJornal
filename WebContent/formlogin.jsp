@@ -31,7 +31,7 @@
 		<h1>Entrar</h1>
 	</div>
 
-	<form action="#" method="post">
+	<form action="LoginUserServlet" method="get">
 
 		<div class="row collapse">
 			<div class="large-6 columns">
@@ -62,11 +62,11 @@
 		<div class="row collapse">
 			<div class="large-6 columns">
 
-				<select>
+				<select name="papel">
 					<option value="opcao">Escolha uma Opção</option>
-					<option value="leitor">Leitor</option>
-					<option value="jornalista">Jornalista</option>
-					<option value="editor">Editor</option>
+					<option value="Leitor">Leitor</option>
+					<option value="Jornalista">Jornalista</option>
+					<option value="Editor">Editor</option>
 				</select>
 
 			</div>

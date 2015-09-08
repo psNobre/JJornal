@@ -3,7 +3,6 @@ package br.ufc.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-
 import br.ufc.dao.interfaces.DAO;
 import br.ufc.factory.JPAUtilFactory;
 import br.ufc.logger.Logger;
@@ -28,7 +27,6 @@ public class SessionDAO implements DAO<Session> {
 		Logger.printLog(TAG, "Seção persistido com sucesso...");
 		
 		entityManager.close();
-		
 	}
 
 	@Override
