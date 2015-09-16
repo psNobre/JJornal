@@ -24,7 +24,7 @@ public class UserDAO implements IUserDAO {
 //								 .setParameter("login", login)
 //								 .getSingleResult();	
 //		Logger.printLog(TAG, "Usuário encontrado com sucesso...");
-//		entityManager.close();
+//		entityManager.close();	
 		
 		return user;
 	}
