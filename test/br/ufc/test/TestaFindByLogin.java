@@ -1,7 +1,7 @@
 package br.ufc.test;
 
-import br.ufc.dao.UserDAO;
-import br.ufc.model.User;
+import br.ufc.jjornal.dao.UserDAO;
+import br.ufc.jjornal.model.User;
 
 public class TestaFindByLogin {
 

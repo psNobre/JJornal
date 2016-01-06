@@ -1,8 +1,8 @@
 package br.ufc.test;
 
-import br.ufc.dao.PapelDAO;
-import br.ufc.dao.UserDAO;
-import br.ufc.model.Papel;
+import br.ufc.jjornal.dao.PapelDAO;
+import br.ufc.jjornal.dao.UserDAO;
+import br.ufc.jjornal.model.Papel;
 
 public class TesteAddPapel {
 

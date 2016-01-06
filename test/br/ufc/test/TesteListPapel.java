@@ -2,8 +2,8 @@ package br.ufc.test;
 
 import java.util.List;
 
-import br.ufc.dao.PapelDAO;
-import br.ufc.model.Papel;
+import br.ufc.jjornal.dao.PapelDAO;
+import br.ufc.jjornal.model.Papel;
 
 public class TesteListPapel {
 

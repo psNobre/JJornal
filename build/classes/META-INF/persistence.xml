@@ -7,8 +7,9 @@
 	
 	<persistence-unit name="teste">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>br.ufc.model.User</class>
-		<class>br.ufc.model.Papel</class>
+		<class>br.ufc.jjornal.model.User</class>
+		<class>br.ufc.jjornal.model.Papel</class>
+		
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
 			<property name="hibernate.show_sql" value="true" />
