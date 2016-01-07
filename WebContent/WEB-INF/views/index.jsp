@@ -27,6 +27,7 @@
 		<li class="active"><a href="home">${UserLogado.nome}</a></li>
 		<li><a href="login">Entrar</a></li>
 		<li><a href="register">Registrar-se</a></li>
+		<li><a href="listaClassificados">Classificados</a></li>
 
 		<li class="has-dropdown"  value=""><a href="#">Notícias</a>
 			<ul class="dropdown">

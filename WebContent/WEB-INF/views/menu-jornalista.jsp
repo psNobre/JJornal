@@ -25,8 +25,9 @@
 	<section class="top-bar-section">
 	<ul class="right">
 		<li class="active"><a href="home">${UserLogado.nome}</a></li>
-		<li><a href="login">Entrar</a></li>
-		<li><a href="register">Registrar-se</a></li>
+		<li><a href="formNoticias">Add Notícias</a></li>
+		<li><a href="listaNoticias">Gerenciar Notícias</a></li>
+		<li><a href="listaClassificados">Classificados</a></li>
 		<li><a href="logoutUser">Sair</a></li>
 
 		<li class="has-dropdown"  value=""><a href="#">Notícias</a>
@@ -39,10 +40,21 @@
 
 	<div class="row">
 		<h1>Jornalista</h1>
-		<p>Modo Jornalista</p>
+		<p>Bem-Vindo ao JJornal <strong>${UserLogado.nome}</strong></p>
 
 	</div>
+	
+	<div class="row">
+		<hr>
+		<div class="large-8 columns">
+			<h4>O que você pode fazer como modo Jornalista</h4>
+			<p><i>...Cadastrar Notícias</i></p>
+			<hr/>
+			<p><i>...Gerenciar Notícias</i></p>
+			<i class="fi-social-twitter"></i>
+		</div>
 
+	</div>
 
 		<footer class="row">
 		<div class="large-12 columns">

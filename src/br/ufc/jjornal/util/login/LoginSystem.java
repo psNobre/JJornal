@@ -1,10 +1,7 @@
 package br.ufc.jjornal.util.login;
 
 import java.util.List;
-
 import javax.servlet.http.HttpSession;
-
-import br.ufc.jjornal.dao.UserDAO;
 import br.ufc.jjornal.logger.Logger;
 import br.ufc.jjornal.model.Papel;
 import br.ufc.jjornal.model.User;
@@ -13,27 +10,11 @@ public abstract class LoginSystem {
 	
 	private static final String TAG = LoginSystem.class.getName();
 	
-	private UserDAO dao = new UserDAO();
-	
-	public String login(HttpSession session, String login, String senha, String papel){	
+	public String login(HttpSession session, User user, String senha, String papel){	
 		
-		boolean checkUserExist = procuraUsuario(login);
-		
-		if (checkUserExist) {
-			boolean permitido = checarPermissao(dao.findUserByLogin(login), papel);	
-			return validarParametros(session, dao.findUserByLogin(login), senha, permitido);
-		}
-		
-		return "formlogin";
+		boolean permitido = checarPermissao(user, papel);	
+		return validarParametros(session, user, senha, permitido);
 	
-	}
-	
-	protected boolean procuraUsuario(String login) {
-		User user = dao.findUserByLogin(login);
-		if (user != null) {
-			return true;
-		}
-		return false;
 	}
 		
 	protected boolean checarPermissao(User user, String papel) {

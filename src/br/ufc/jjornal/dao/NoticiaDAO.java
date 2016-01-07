@@ -5,52 +5,48 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.springframework.stereotype.Repository;
-
 import br.ufc.jjornal.dao.interfaces.DAO;
 import br.ufc.jjornal.logger.Logger;
-import br.ufc.jjornal.model.Secao;
+import br.ufc.jjornal.model.Noticia;
 
-@Repository
-public class SecaoDAO implements DAO<Secao> {
-	private static final String TAG = SecaoDAO.class.getName();
+public class NoticiaDAO implements DAO<Noticia> {
+	private static final String TAG = NoticiaDAO.class.getName();
 	
 	@PersistenceContext
 	private EntityManager manager;
 
 	@Override
-	public Secao findById(Object id) {
-		Secao secao = this.manager.find(Secao.class, id);
-		return secao;
+	public Noticia findById(Object id) {
+		Noticia noticia = this.manager.find(Noticia.class, id);
+		return noticia;
 	}
 
 	@Override
-	public void salvar(Secao entidade) {
+	public void salvar(Noticia entidade) {
 		this.manager.persist(entidade);
 		Logger.printLog(TAG, "Entidade persistido com sucesso..."); 
 		
 	}
 
 	@Override
-	public void remover(Secao entidade) {
-		 this.manager.remove(this.manager.getReference(Secao.class, entidade.getId()));
+	public void remover(Noticia entidade) {
+		 this.manager.remove(this.manager.getReference(Noticia.class, entidade.getId()));
 		 Logger.printLog(TAG, "Entidade removido com sucesso..."); 
 		
 	}
 
 	@Override
-	public List<Secao> listar() {
-		List<Secao> secoes = this.manager.createQuery("select s from secao s").getResultList();
+	public List<Noticia> listar() {
+		List<Noticia> noticias = this.manager.createQuery("select n from noticia n").getResultList();
 		Logger.printLog(TAG, "Lista retornada com sucesso..."); 
-		return secoes;
+		return noticias;
 	}
 
 	@Override
-	public void alterar(Secao entidade) {
+	public void alterar(Noticia entidade) {
 		this.manager.merge(entidade);
 		Logger.printLog(TAG, "Entidade Atualizado com sucesso..."); 
 		
 	}
 
-	
 }

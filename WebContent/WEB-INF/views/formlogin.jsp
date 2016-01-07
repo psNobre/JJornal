@@ -32,7 +32,7 @@
 		<h1>Entrar</h1>
 	</div>
 
-	<form action="loginUser" method="get">
+	<form action="loginUser" method="post">
 
 		<div class="row collapse">
 			<div class="large-6 columns">

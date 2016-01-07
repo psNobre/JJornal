@@ -7,13 +7,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Editor | Add Jornalista</title>
+<title>Jornalista | Add Notícias</title>
 <link rel="stylesheet" href="<c:url value="/css/foundation.css" />" />
 <script src="<c:url value="/js/vendor/modernizr.js" />"></script>
 </head>
 
 <body>
-
 	<nav class="top-bar" data-topbar role="navigation">
 	<ul class="title-area">
 		<li class="name">
@@ -25,72 +24,70 @@
 	<section class="top-bar-section">
 	<ul class="right">
 		<li class="active"><a href="home">${UserLogado.nome}</a></li>
-		<li><a href="formSecao">Add Seção</a></li>
-		<li><a href="formClassificados">Add Classificados</a></li>
 		<li><a href="listaNoticias">Gerenciar Notícias</a></li>
 		<li><a href="listaClassificados">Classificados</a></li>
 		<li><a href="logoutUser">Sair</a></li>
+
 	</ul>
 	</section> </nav>
 
 	<div class="row">
-		<h1>Cadastrar Jornalista</h1>
+		<h1>Cadastrar uma Nova Notícia</h1>
 	</div>
 
-	<form action="registerJornalista" method="post">
+	<form action="cadastrarNoticias" method="post">
+
 		<div class="row collapse">
 			<div class="large-6 columns">
 				<div class="row collapse prefix-radius">
 					<div class="small-3 columns">
-						<span class="prefix">Nome</span>
+						<span class="prefix">Título</span>
 					</div>
 					<div class="small-9 columns">
-						<input type="text" placeholder="Nome" name="nome" required
-							x-moz-errormessage="Ops. Você esqueceu de preencher seu nome.">
+						<input type="text" placeholder="Título" name="titulo" required
+							x-moz-errormessage="Preencha o Título.">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row collapse">
+			<div class="large-6 columns">
+				<div class="row collapse prefix-radius">
+					<div class="small-3 columns">
+						<span class="prefix">Subtítulo</span>
+					</div>
+					<div class="small-9 columns">
+						<input type="text" placeholder="Subtítulo" name="subtitulo" required
+							x-moz-errormessage="Preencha um Subtítulo.">
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row collapse">
 			<div class="large-6 columns">
-				<div class="row collapse prefix-radius">
-					<div class="small-3 columns">
-						<span class="prefix">Email</span>
-					</div>
-					<div class="small-9 columns">
-						<input type="text" placeholder="exemplo@gmail.com" name="email"
-							required
-							x-moz-errormessage="Não esqueça de preencher com seu email.">
-					</div>
+				<div class="small-12 columns">
+					<label>Notícia
+       					<textarea placeholder="Nesta semana..." name="texto" rows="15" required></textarea>
+     				</label>
 				</div>
 			</div>
 		</div>
+		
+		
 		<div class="row collapse">
 			<div class="large-6 columns">
-				<div class="row collapse prefix-radius">
-					<div class="small-3 columns">
-						<span class="prefix">Login</span>
-					</div>
-					<div class="small-9 columns">
-						<input type="text" placeholder="Usuário" name="login" required
-							x-moz-errormessage="Campo obrigatório não esquece-lo.">
-					</div>
-				</div>
+
+				<select name="secao">
+					<option value="opcao">Escolha a Seção da Notícia</option>
+					<option value="Leitor">Lazer</option>
+					<option value="Jornalista">Esporte</option>
+					<option value="Editor">Politica</option>
+				</select>
+
 			</div>
 		</div>
-		<div class="row collapse">
-			<div class="large-6 columns">
-				<div class="row collapse prefix-radius">
-					<div class="small-3 columns">
-						<span class="prefix">Senha</span>
-					</div>
-					<div class="small-9 columns">
-						<input type="password" placeholder="Senha" name="senha" required
-							x-moz-errormessage="Não esqueça sua senha.">
-					</div>
-				</div>
-			</div>
-		</div>
+
 		<div class="row collapse">
 			<div class="large-6 columns">
 				<div class="row collapse prefix-radius">

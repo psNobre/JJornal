@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Editor | Add Seção</title>
+<title>JJornal | Classificados</title>
 <link rel="stylesheet" href="<c:url value="/css/foundation.css" />" />
 <script src="<c:url value="/js/vendor/modernizr.js" />"></script>
 </head>
@@ -24,54 +24,17 @@
 	<section class="top-bar-section">
 	<ul class="right">
 		<li class="active"><a href="home">${UserLogado.nome}</a></li>
-		<li><a href="formJornalista">Add Jornalista</a></li>
-		<li><a href="formClassificados">Add Classificados</a></li>
-		<li><a href="listaNoticias">Gerenciar Notícias</a></li>
-		<li><a href="listaClassificados">Classificados</a></li>
-		<li><a href="logoutUser">Sair</a></li>
+		<li><a href="login">Entrar</a></li>
+		<li><a href="register">Registrar-se</a></li>
 
 	</ul>
 	</section> </nav>
 
 	<div class="row">
-		<h1>Cadastrar Nova Seção</h1>
+		<h1>Classificados</h1>
 	</div>
 
-	<form action="cadastrarSecao" method="post">
-
-		<div class="row collapse">
-			<div class="large-6 columns">
-				<div class="row collapse prefix-radius">
-					<div class="small-3 columns">
-						<span class="prefix">Título</span>
-					</div>
-					<div class="small-9 columns">
-						<input type="text" placeholder="Título" name="titulo" required
-							x-moz-errormessage="Preencha o Título.">
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row collapse">
-			<div class="large-6 columns">
-				<div class="small-12 columns">
-					<label>Descrição
-       					<textarea placeholder="Esta Seção represanta..." name="descricao" rows="10" required></textarea>
-     				</label>
-				</div>
-			</div>
-		</div>
-
-		<div class="row collapse">
-			<div class="large-6 columns">
-				<div class="row collapse prefix-radius">
-					<div class="small-9 columns">
-						<input class="button success" type="submit" value="Cadastrar"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</form>
+	//TODO
 
 	<footer class="row">
 	<div class="large-12 columns">

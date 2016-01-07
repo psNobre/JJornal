@@ -42,9 +42,19 @@ public class NavigationController {
 		return "formregister_classificados";
 	}
 	
+	@RequestMapping("/formNoticias")
+	public String formRegistroNoticias(){
+		return "formregister_noticias";
+	}
+	
 	@RequestMapping("/listaNoticias")
 	public String listaNoticias(){
 		return "lista_noticias";
+	}
+	
+	@RequestMapping("/listaClassificados")
+	public String listaClassificados(){
+		return "lista_classificados";
 	}
 	
 	@RequestMapping("/home")

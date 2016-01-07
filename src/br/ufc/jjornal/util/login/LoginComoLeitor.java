@@ -8,7 +8,6 @@ import br.ufc.jjornal.model.User;
 
 public class LoginComoLeitor extends LoginSystem {
 	
-
 	private static final String TAG = LoginComoLeitor.class.getName();
 	
 	@Override

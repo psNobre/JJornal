@@ -25,8 +25,7 @@
 	<section class="top-bar-section">
 	<ul class="right">
 		<li class="active"><a href="home">${UserLogado.nome}</a></li>
-		<li><a href="login">Entrar</a></li>
-		<li><a href="register">Registrar-se</a></li>
+		<li><a href="listaClassificados">Classificados</a></li>
 		<li><a href="logoutUser">Sair</a></li>
 
 		<li class="has-dropdown"  value=""><a href="#">Notícias</a>
@@ -39,7 +38,19 @@
 
 	<div class="row">
 		<h1>Leitor</h1>
-		<p>Modo Leitor</p>
+		<p>Bem-Vindo ao JJornal <strong>${UserLogado.nome}</strong></p>
+
+	</div>
+	
+	<div class="row">
+		<hr>
+		<div class="large-8 columns">
+			<h4>O que você pode fazer como Assinante</h4>
+			<p><i>...Inserir Comentários nas notícias</i></p>
+			<hr/>
+			<p><i>...Inserir ofertas nos Classificados</i></p>
+			<i class="fi-social-twitter"></i>
+		</div>
 
 	</div>
 
