@@ -16,7 +16,7 @@ public class UserComoEditor extends AddUserSystem {
 		editor.setUser(user);
 		dao.salvar(editor);
 		
-		return "index.jsp";
+		return "index";
 	}
 
 }

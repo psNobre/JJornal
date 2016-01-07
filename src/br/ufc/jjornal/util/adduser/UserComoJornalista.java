@@ -16,7 +16,7 @@ public class UserComoJornalista extends AddUserSystem {
 		jornalista.setUser(user);
 		dao.salvar(jornalista);
 		
-		return "index.jsp";
+		return "index";
 	}
 
 }

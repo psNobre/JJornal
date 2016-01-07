@@ -7,12 +7,13 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>JJornal | Entrar</title>
+<title>Editor | Add Jornalista</title>
 <link rel="stylesheet" href="<c:url value="/css/foundation.css" />" />
 <script src="<c:url value="/js/vendor/modernizr.js" />"></script>
 </head>
 
 <body>
+
 	<nav class="top-bar" data-topbar role="navigation">
 	<ul class="title-area">
 		<li class="name">
@@ -24,16 +25,42 @@
 	<section class="top-bar-section">
 	<ul class="right">
 		<li class="active"><a href="home">${UserLogado.nome}</a></li>
-		<li><a href="register">Registrar-se</a></li>
+		<li><a href="logoutUser">Sair</a></li>
 	</ul>
 	</section> </nav>
 
 	<div class="row">
-		<h1>Entrar</h1>
+		<h1>Cadastrar Jornalista</h1>
 	</div>
 
-	<form action="loginUser" method="get">
-
+	<form action="registerJornalista" method="post">
+		<div class="row collapse">
+			<div class="large-6 columns">
+				<div class="row collapse prefix-radius">
+					<div class="small-3 columns">
+						<span class="prefix">Nome</span>
+					</div>
+					<div class="small-9 columns">
+						<input type="text" placeholder="Nome" name="nome" required
+							x-moz-errormessage="Ops. Você esqueceu de preencher seu nome.">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row collapse">
+			<div class="large-6 columns">
+				<div class="row collapse prefix-radius">
+					<div class="small-3 columns">
+						<span class="prefix">Email</span>
+					</div>
+					<div class="small-9 columns">
+						<input type="text" placeholder="exemplo@gmail.com" name="email"
+							required
+							x-moz-errormessage="Não esqueça de preencher com seu email.">
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="row collapse">
 			<div class="large-6 columns">
 				<div class="row collapse prefix-radius">
@@ -42,7 +69,7 @@
 					</div>
 					<div class="small-9 columns">
 						<input type="text" placeholder="Usuário" name="login" required
-							x-moz-errormessage="Preencha com seu nome de usuário.">
+							x-moz-errormessage="Campo obrigatório não esquece-lo.">
 					</div>
 				</div>
 			</div>
@@ -55,28 +82,16 @@
 					</div>
 					<div class="small-9 columns">
 						<input type="password" placeholder="Senha" name="senha" required
-							x-moz-errormessage="O campo senha é obrigatório.">
+							x-moz-errormessage="Não esqueça sua senha.">
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row collapse">
 			<div class="large-6 columns">
-
-				<select name="papel">
-					<option value="opcao">Escolha uma Opção</option>
-					<option value="Leitor">Leitor</option>
-					<option value="Jornalista">Jornalista</option>
-					<option value="Editor">Editor</option>
-				</select>
-
-			</div>
-		</div>
-		<div class="row collapse">
-			<div class="large-6 columns">
 				<div class="row collapse prefix-radius">
 					<div class="small-9 columns">
-						<input class="button success" type="submit" value="ENTRAR"></a>
+						<input class="button success" type="submit" value="Cadastrar"></a>
 					</div>
 				</div>
 			</div>

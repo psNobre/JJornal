@@ -24,7 +24,7 @@
 	</ul>
 	<section class="top-bar-section">
 	<ul class="right">
-		<li class="active"><a href="index">Home</a></li>
+		<li class="active"><a href="home">${UserLogado.nome}</a></li>
 		<li><a href="login">Entrar</a></li>
 	</ul>
 	</section> </nav>
@@ -33,7 +33,7 @@
 		<h1>Registro</h1>
 	</div>
 
-	<form action="cadastrarLeitor" method="post">
+	<form action="registerLeitor" method="post">
 		<div class="row collapse">
 			<div class="large-6 columns">
 				<div class="row collapse prefix-radius">

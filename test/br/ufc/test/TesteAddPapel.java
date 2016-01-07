@@ -11,8 +11,8 @@ public class TesteAddPapel {
 		PapelDAO papelDAO = new PapelDAO();
 		
 		Papel papel = new Papel();
-		papel.setPapel("Leitor");		
-		papel.setUser(usuarioDao.findUserByLogin("carlos"));
+		papel.setPapel("Editor");		
+		papel.setUser(usuarioDao.findUserByLogin("admin"));
 		
 		papelDAO.salvar(papel);
 

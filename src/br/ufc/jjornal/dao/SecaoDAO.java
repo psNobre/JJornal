@@ -9,20 +9,20 @@ import org.springframework.stereotype.Repository;
 import br.ufc.jjornal.dao.interfaces.DAO;
 import br.ufc.jjornal.factory.JPAUtilFactory;
 import br.ufc.jjornal.logger.Logger;
-import br.ufc.jjornal.model.Session;
+import br.ufc.jjornal.model.Secao;
 
 @Repository
-public class SessionDAO implements DAO<Session> {
-	private static final String TAG = SessionDAO.class.getName();
+public class SecaoDAO implements DAO<Secao> {
+	private static final String TAG = SecaoDAO.class.getName();
 
 	@Override
-	public Session findById(Object id) {
+	public Secao findById(Object id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void salvar(Session entidade) {
+	public void salvar(Secao entidade) {
 		EntityManager entityManager = JPAUtilFactory.geEntityManager();
 		
 		entityManager.getTransaction().begin();
@@ -34,19 +34,19 @@ public class SessionDAO implements DAO<Session> {
 	}
 
 	@Override
-	public void remover(Session entidade) {
+	public void remover(Secao entidade) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<Session> listar() {
+	public List<Secao> listar() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void alterar(Session entidade) {
+	public void alterar(Secao entidade) {
 		// TODO Auto-generated method stub
 		
 	}

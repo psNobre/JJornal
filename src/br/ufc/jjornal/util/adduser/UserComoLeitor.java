@@ -16,7 +16,7 @@ public class UserComoLeitor extends AddUserSystem {
 		leitor.setUser(user);
 		dao.salvar(leitor);
 		
-		return "login";
+		return "formlogin";
 	}
 
 }

@@ -24,15 +24,17 @@
 	</ul>
 	<section class="top-bar-section">
 	<ul class="right">
-		<li class="active"><a href="index">Home</a></li>
+		<li class="active"><a href="home">${UserLogado.nome}</a></li>
 		<li><a href="login">Entrar</a></li>
 		<li><a href="register">Registrar-se</a></li>
 
 		<li class="has-dropdown"  value=""><a href="#">Notícias</a>
 			<ul class="dropdown">
-				<li class="active"><a href="secao.jsp">First link in dropdown</a></li>
+				<li class="active"><a href="#">First link in dropdown</a></li>
 				<li class="active"><a href="#">Active link in dropdown</a></li>
-			</ul></li>
+		</ul></li>
+			
+			
 	</ul>
 	</section> </nav>
 

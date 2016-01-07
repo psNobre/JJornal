@@ -1,20 +1,30 @@
 package br.ufc.jjornal.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity(name ="secao")
-public class Session {
+public class Secao {
 	
 	@Id @GeneratedValue
+	@Column(name="id")  
 	private Long id;
 	
-	@Column
+	@Column(name="titulo")  
 	private String titulo;
-	@Column
+	
+	@Column(name="descricao", columnDefinition="text")  
 	private String descricao;
+	
+	@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="secao") 
+	private List<Noticia> noticias;
 	
 	public Long getId() {
 		return id;
@@ -34,6 +44,14 @@ public class Session {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	
+	public List<Noticia> getNoticias() {
+		return noticias;
+	}
+	public void setNoticias(List<Noticia> noticias) {
+		this.noticias = noticias;
+	}
+	
 	@Override
 	public String toString() {
 		return "Session [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + "]";

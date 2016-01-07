@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>JJornal | Entrar</title>
+<title>Editor | Add Seção</title>
 <link rel="stylesheet" href="<c:url value="/css/foundation.css" />" />
 <script src="<c:url value="/js/vendor/modernizr.js" />"></script>
 </head>
@@ -24,59 +24,45 @@
 	<section class="top-bar-section">
 	<ul class="right">
 		<li class="active"><a href="home">${UserLogado.nome}</a></li>
-		<li><a href="register">Registrar-se</a></li>
+		<li><a href="logoutUser">Sair</a></li>
+
 	</ul>
 	</section> </nav>
 
 	<div class="row">
-		<h1>Entrar</h1>
+		<h1>Cadastrar Nova Seção</h1>
 	</div>
 
-	<form action="loginUser" method="get">
+	<form action="cadastrarSecao" method="post">
 
 		<div class="row collapse">
 			<div class="large-6 columns">
 				<div class="row collapse prefix-radius">
 					<div class="small-3 columns">
-						<span class="prefix">Login</span>
+						<span class="prefix">Título</span>
 					</div>
 					<div class="small-9 columns">
-						<input type="text" placeholder="Usuário" name="login" required
-							x-moz-errormessage="Preencha com seu nome de usuário.">
+						<input type="text" placeholder="Título" name="titulo" required
+							x-moz-errormessage="Preencha o Título.">
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row collapse">
 			<div class="large-6 columns">
-				<div class="row collapse prefix-radius">
-					<div class="small-3 columns">
-						<span class="prefix">Senha</span>
-					</div>
-					<div class="small-9 columns">
-						<input type="password" placeholder="Senha" name="senha" required
-							x-moz-errormessage="O campo senha é obrigatório.">
-					</div>
+				<div class="small-12 columns">
+					<label>Descrição
+       					<textarea placeholder="Esta Seção represanta..." name="descricao" rows="10" required></textarea>
+     				</label>
 				</div>
 			</div>
 		</div>
-		<div class="row collapse">
-			<div class="large-6 columns">
 
-				<select name="papel">
-					<option value="opcao">Escolha uma Opção</option>
-					<option value="Leitor">Leitor</option>
-					<option value="Jornalista">Jornalista</option>
-					<option value="Editor">Editor</option>
-				</select>
-
-			</div>
-		</div>
 		<div class="row collapse">
 			<div class="large-6 columns">
 				<div class="row collapse prefix-radius">
 					<div class="small-9 columns">
-						<input class="button success" type="submit" value="ENTRAR"></a>
+						<input class="button success" type="submit" value="Cadastrar"></a>
 					</div>
 				</div>
 			</div>

@@ -29,6 +29,15 @@ public class User {
 	
 	@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="user") 
 	private List<Papel> papeis;
+	
+	@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="user") 
+	private List<Noticia> noticias;
+	
+	@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="user") 
+	private List<Classificado> classificados;
+	
+	@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="user") 
+	private List<Comentario> comentarios;
 
 	/** 
 	 * Métodos Getters Setters e toString
@@ -72,6 +81,33 @@ public class User {
 
 	public void setPapeis(List<Papel> papeis) {
 		this.papeis = papeis;
+	}
+	
+
+	public List<Noticia> getNoticias() {
+		return noticias;
+	}
+
+	public void setNoticias(List<Noticia> noticias) {
+		this.noticias = noticias;
+	}
+	
+
+	public List<Classificado> getClassificados() {
+		return classificados;
+	}
+
+	public void setClassificados(List<Classificado> classificados) {
+		this.classificados = classificados;
+		
+	}
+
+	public List<Comentario> getComentarios() {
+		return comentarios;
+	}
+
+	public void setComentarios(List<Comentario> comentarios) {
+		this.comentarios = comentarios;
 	}
 
 	@Override

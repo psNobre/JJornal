@@ -21,7 +21,7 @@
 	</ul>
 	<section class="top-bar-section">
 	<ul class="right">
-		<li class="active"><a href="index">Home</a></li>
+		<li class="active"><a href="home">${UserLogado.nome}</a></li>
 		<li><a href="login">Entrar</a></li>
 		<li><a href="register">Registrar-se</a></li>
 	</ul>
