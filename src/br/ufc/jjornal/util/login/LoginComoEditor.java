@@ -18,7 +18,7 @@ public class LoginComoEditor extends LoginSystem{
 			session.setAttribute("UserLogado", user);
 			session.setAttribute("UserTipo", Config.EDITOR);
 			Logger.printLog(TAG, "Usuário adicionado na Sessão...");
-			return "menu-editor";
+			return "redirect:home";
 		}
 		return "formlogin";
 	}

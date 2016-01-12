@@ -10,6 +10,8 @@
 <title>${UserTipo} | Gerenciar Notícias</title>
 <link rel="stylesheet" href="<c:url value="/css/foundation.css" />" />
 <script src="<c:url value="/js/vendor/modernizr.js" />"></script>
+<script src="<c:url value="/js/vendor/jquery.js" />"></script>
+<script src="<c:url value="/js/dropdown.js" />"></script>
 </head>
 
 <body>

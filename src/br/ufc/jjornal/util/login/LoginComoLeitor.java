@@ -17,7 +17,7 @@ public class LoginComoLeitor extends LoginSystem {
 			session.setAttribute("UserLogado", user);
 			session.setAttribute("UserTipo", Config.LEITOR);
 			Logger.printLog(TAG, "Usuário adicionado na Sessão...");
-			return "menu-leitor";
+			return "redirect:home";
 		}
 		return "formlogin";
 	}

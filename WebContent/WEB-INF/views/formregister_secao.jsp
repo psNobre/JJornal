@@ -27,7 +27,6 @@
 		<li><a href="formJornalista">Add Jornalista</a></li>
 		<li><a href="formClassificados">Add Classificados</a></li>
 		<li><a href="listaNoticias">Gerenciar Notícias</a></li>
-		<li><a href="listaClassificados">Classificados</a></li>
 		<li><a href="logoutUser">Sair</a></li>
 
 	</ul>

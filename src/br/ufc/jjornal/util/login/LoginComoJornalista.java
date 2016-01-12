@@ -17,7 +17,7 @@ public class LoginComoJornalista extends LoginSystem {
 			session.setAttribute("UserLogado", user);
 			session.setAttribute("UserTipo", Config.JORNALISTA);
 			Logger.printLog(TAG, "Usuário adicionado na Sessão...");
-			return "menu-jornalista";
+			return "redirect:home";
 		}
 		return "formlogin";
 	}

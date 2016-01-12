@@ -26,6 +26,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 	<mvc:resources mapping="/css/**" location="/WEB-INF/views/css/"/>
 	<mvc:resources mapping="/js/**" location="/WEB-INF/views/js/"/>
 	<mvc:resources mapping="/img/**" location="/WEB-INF/views/img/"/>
+
 	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

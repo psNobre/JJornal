@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html class="no-js" lang="en" >
 
 
 <head>
@@ -11,6 +11,8 @@
 <title>JJornal | Editor</title>
 <link rel="stylesheet" href="<c:url value="/css/foundation.css" />" />
 <script src="<c:url value="/js/vendor/modernizr.js" />"></script>
+<script src="<c:url value="/js/vendor/jquery.js" />"></script>
+<script src="<c:url value="/js/dropdown.js" />"></script>
 </head>
 
 <body>	
@@ -32,11 +34,15 @@
 		<li><a href="listaClassificados">Classificados</a></li>
 		<li><a href="logoutUser">Sair</a></li>
 
-		<li class="has-dropdown"  value=""><a href="#">Notícias</a>
+		<li class="has-dropdown"  value="">
+			<a href="#">Notícias</a>
 			<ul class="dropdown">
-				<li class="active"><a href="#">First link in dropdown</a></li>
-				<li class="active"><a href="#">Active link in dropdown</a></li>
-			</ul></li>
+				<c:forEach items="${ secoes }" var="secao">
+   					<li class="active"><a class="work" href="secoes/${secao.id}">${secao.titulo}</a></li>
+
+   				</c:forEach>
+		</ul></li>
+		
 	</ul>
 	</section> </nav>
 	

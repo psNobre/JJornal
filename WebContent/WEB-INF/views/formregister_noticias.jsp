@@ -25,7 +25,6 @@
 	<ul class="right">
 		<li class="active"><a href="home">${UserLogado.nome}</a></li>
 		<li><a href="listaNoticias">Gerenciar Notícias</a></li>
-		<li><a href="listaClassificados">Classificados</a></li>
 		<li><a href="logoutUser">Sair</a></li>
 
 	</ul>
@@ -80,9 +79,9 @@
 
 				<select name="secao">
 					<option value="opcao">Escolha a Seção da Notícia</option>
-					<option value="Leitor">Lazer</option>
-					<option value="Jornalista">Esporte</option>
-					<option value="Editor">Politica</option>
+					<c:forEach items="${ secoes }" var="secao">
+   					<option value="${secao.id}">${secao.titulo}</option>
+   				</c:forEach>
 				</select>
 
 			</div>

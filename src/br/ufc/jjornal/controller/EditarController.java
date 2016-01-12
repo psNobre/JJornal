@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.ufc.jjornal.conf.Config;
+import br.ufc.jjornal.dao.ClassificadoDAO;
 import br.ufc.jjornal.dao.PapelDAO;
 import br.ufc.jjornal.dao.SecaoDAO;
 import br.ufc.jjornal.dao.UserDAO;
@@ -28,6 +29,9 @@ public class EditarController {
 	@Autowired
 	private SecaoDAO secaoDAO;
 	
+	@Autowired
+	private ClassificadoDAO classificadoDAO;
+	
 	@RequestMapping("/registerJornalista")
 	public String registerJornalista(User user) {
 		this.userDao.salvar(user);
@@ -37,18 +41,18 @@ public class EditarController {
 		jornalista.setUser(user);
 		this.papelDao.salvar(jornalista);
 		
-		return "menu-editor";
+		return "redirect:home";
 	}
 	
 	@RequestMapping("/cadastrarSecao")
 	public String cadastrarSecao(Secao secao){
-		secaoDAO.salvar(secao);
-		return "menu-editor";
+		this.secaoDAO.salvar(secao);
+		return "redirect:home";
 	}
 	
 	@RequestMapping("/cadastrarClassificados")
 	public String cadastrarClassificados(Classificado classificado){
-		//TODO Classificado DAO
-		return "menu-editor";
+		this.classificadoDAO.salvar(classificado);
+		return "redirect:home";
 	}
 }

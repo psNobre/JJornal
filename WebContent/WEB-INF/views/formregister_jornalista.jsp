@@ -28,7 +28,6 @@
 		<li><a href="formSecao">Add Seção</a></li>
 		<li><a href="formClassificados">Add Classificados</a></li>
 		<li><a href="listaNoticias">Gerenciar Notícias</a></li>
-		<li><a href="listaClassificados">Classificados</a></li>
 		<li><a href="logoutUser">Sair</a></li>
 	</ul>
 	</section> </nav>

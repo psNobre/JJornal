@@ -9,6 +9,8 @@
 <title>JJornal | Notícias</title>
 <link rel="stylesheet" href="css/foundation.css" />
 <script src="js/vendor/modernizr.js"></script>
+<script src="<c:url value="/js/vendor/jquery.js" />"></script>
+<script src="<c:url value="/js/dropdown.js" />"></script>
 
 </head>
 <body>

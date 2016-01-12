@@ -5,10 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Repository;
+
 import br.ufc.jjornal.dao.interfaces.DAO;
 import br.ufc.jjornal.logger.Logger;
 import br.ufc.jjornal.model.Noticia;
 
+@Repository
 public class NoticiaDAO implements DAO<Noticia> {
 	private static final String TAG = NoticiaDAO.class.getName();
 	

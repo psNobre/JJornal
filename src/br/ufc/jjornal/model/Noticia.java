@@ -1,5 +1,7 @@
 package br.ufc.jjornal.model;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -24,6 +26,9 @@ public class Noticia {
 	
 	@Column(name="texto")
 	private String texto;
+	
+	@Column(name="data_noticia")  
+	private Timestamp dataNoticia;
 	
 	@ManyToOne(fetch=FetchType.LAZY) 
 	@JoinColumn(name="id_user") 
@@ -83,6 +88,15 @@ public class Noticia {
 
 	public void setSecao(Secao secao) {
 		this.secao = secao;
+	}
+	
+
+	public Timestamp getDataNoticia() {
+		return dataNoticia;
+	}
+
+	public void setDataNoticia(Timestamp dataNoticia) {
+		this.dataNoticia = dataNoticia;
 	}
 
 	@Override

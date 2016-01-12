@@ -5,10 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Repository;
+
 import br.ufc.jjornal.dao.interfaces.DAO;
 import br.ufc.jjornal.logger.Logger;
 import br.ufc.jjornal.model.Comentario;
 
+@Repository
 public class ComentarioDAO implements DAO<Comentario> {
 	private static final String TAG = ComentarioDAO.class.getName();
 	
