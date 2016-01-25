@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html  class="no-js" lang="en" >
 
@@ -43,23 +44,58 @@
 		
 	</ul>
 	</section> </nav>
+
 	<div class="row">
-		<h1>${ secao.titulo }</h1>
-		<p>${ secao.descricao }</p>
+		<h1>${noticia.titulo}</h1>
+		<p>${noticia.subtitulo}</p>
+	</div>
 
-		<ul
-			class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4"
-			data-clearing>	
-			
-			<c:forEach items="${ noticias }" var="noticia">
-   					<li><a href=<c:url value="/noticia/${noticia.id}"></c:url>><img data-caption="caption here..."
-					src="http://placehold.it/800x500&text=[img]"><br><span
-					style="font-size: small">${noticia.titulo}</span></a></li>
+	<div class="row">
+		<hr>
+		<div class="large-8 columns">
+			<h4>Data e Hora da Publicação: ${noticia.dataNoticia}</h4>
+			<div style="width:600px">${noticia.texto}</div>
+			<i class="fi-social-twitter"></i>
+		</div>
 
-   			</c:forEach>
+		<div class="large-4 columns">
+			<img src="http://placehold.it/800x500&text=[img]">
+		</div>
+
+	</div>
+	
+
+	
+	<div class="row" >
+		<hr>
+			<c:forEach items="${ comentarios }" var="comentario">
+<%-- 					<h5>${comentario.user.login}</h5> --%>
+					<p>${comentario.texto}</p>
+					<hr>
+			</c:forEach>
+				
 		
-		</ul>
-
+	<form action="../cadastrarComentarios/${noticia.id}" method="post">
+		<div class="row collapse">
+			<div class="large-8 columns">
+				<div class="small-12 columns">
+					<label>Comentário
+       					<textarea placeholder="Vale ressaltar..." name="texto" rows="5" required></textarea>
+     				</label>
+				</div>
+			</div>
+		</div>
+		
+			<div class="row collapse">
+			<div class="large-6 columns">
+				<div class="row collapse prefix-radius">
+					<div class="small-9 columns">
+						<input class="button success" type="submit" value="Comentar"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
 	</div>
 
 		<footer class="row">

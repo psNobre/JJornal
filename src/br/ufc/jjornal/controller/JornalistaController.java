@@ -26,7 +26,7 @@ public class JornalistaController {
 	@RequestMapping("/cadastrarNoticias")
 	public String cadastrarNoticia(HttpSession session, String titulo, String subtitulo, String texto, String secao){
 		//Adicionar Seção correspondente a notícia.
-		Secao mSecao = this.secaoDAO.findById(Long.parseLong(secao));
+		Secao mSecao = this.secaoDAO.findById(Integer.parseInt(secao));
 		Noticia noticia = new Noticia();
 		
 		noticia.setTitulo(titulo);

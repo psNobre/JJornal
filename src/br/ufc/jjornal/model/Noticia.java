@@ -1,7 +1,9 @@
 package br.ufc.jjornal.model;
 
 import java.sql.Timestamp;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity(name="noticia")
 public class Noticia {
@@ -16,7 +19,7 @@ public class Noticia {
 	@Id
 	@GeneratedValue
 	@Column(name="id")
-	private String id;
+	private Integer id;
 	
 	@Column(name="titulo")
 	private String titulo;
@@ -38,15 +41,18 @@ public class Noticia {
 	@JoinColumn(name="id_secao") 
 	private Secao secao;
 	
+	@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="noticia") 
+	private List<Comentario> comentarios;
+	
 	/** 
 	 * Métodos Getters Setters e toString
 	 * */
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -97,6 +103,14 @@ public class Noticia {
 
 	public void setDataNoticia(Timestamp dataNoticia) {
 		this.dataNoticia = dataNoticia;
+	}
+
+	public List<Comentario> getComentarios() {
+		return comentarios;
+	}
+
+	public void setComentarios(List<Comentario> comentarios) {
+		this.comentarios = comentarios;
 	}
 
 	@Override

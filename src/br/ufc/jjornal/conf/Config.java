@@ -8,7 +8,7 @@ public class Config {
 	/** 
 	 * Nome do Banco de Dados que será persistido objetos
 	 * */
-	public static final String PERSISTENCE_DB = "jjornal";
+	//public static final String PERSISTENCE_DB = "jjornal";
 
 	/** 
 	 * Tipos de Usuários do Sistema

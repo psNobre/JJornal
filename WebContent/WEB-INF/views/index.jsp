@@ -51,47 +51,17 @@
 
 		<ul
 			class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4"
-			data-clearing>
-			<li><a href="#"><img data-caption="caption here..."
-					src="http://placehold.it/800x500&text=[img]"><br> <span
-					style="font-size: small">Leia mais...</span></a></li>
-			<li><a href="#"><img data-caption="caption 2 here..."
-					src="http://placehold.it/800x500&text=[img]"><br> <span
-					style="font-size: small">Leia mais...</span></a></li>
-			<li><a href="#"><img data-caption="caption 3 here..."
-					src="http://placehold.it/800x500&text=[img]"><br> <span
-					style="font-size: small">Leia mais...</span></a></li>
-			<li><a href="#"><img data-caption="caption 4 here..."
-					src="http://placehold.it/800x500&text=[img]"><br> <span
-					style="font-size: small">Leia mais...</span></a></li>
-			<li><a href="#"><img data-caption="caption here..."
-					src="http://placehold.it/800x500&text=[img]"><br> <span
-					style="font-size: small">Leia mais...</span></a></li>
-			<li><a href="#"><img data-caption="caption 2 here..."
-					src="http://placehold.it/800x500&text=[img]"><br> <span
-					style="font-size: small">Leia mais...</span></a></li>
-			<li><a href="#"><img data-caption="caption 3 here..."
-					src="http://placehold.it/800x500&text=[img]"><br> <span
-					style="font-size: small">Leia mais...</span></a></li>
-			<li><a href="#"><img data-caption="caption 4 here..."
-					src="http://placehold.it/800x500&text=[img]"><br> <span
-					style="font-size: small">Leia mais...</span></a></li>
-			<li><a href="#"><img data-caption="caption here..."
-					src="http://placehold.it/800x500&text=[img]"><br> <span
-					style="font-size: small">Leia mais...</span></a></li>
-			<li><a href="#"><img data-caption="caption 2 here..."
-					src="http://placehold.it/800x500&text=[img]"><br> <span
-					style="font-size: small">Leia mais...</span></a></li>
-			<li><a href="#"><img data-caption="caption 3 here..."
-					src="http://placehold.it/800x500&text=[img]"><br> <span
-					style="font-size: small">Leia mais...</span></a></li>
-			<li><a href="#"><img data-caption="caption 4 here..."
-					src="http://placehold.it/800x500&text=[img]"><br> <span
-					style="font-size: small">Leia mais...</span></a></li>
+			data-clearing>	
+			
+			<c:forEach begin="0" end="11" items="${ noticias }" var="noticia">
+   					<li><a href="noticia/${noticia.id}"><img data-caption="caption here..."
+					src="http://placehold.it/800x500&text=[img]"><br><span
+					style="font-size: small">${noticia.titulo}</span></a></li>
+
+   			</c:forEach>
+		
 		</ul>
-		<div align="right">
-			<a href="noticias.jsp"><span style="font-size: small">Ver Mais</span></a>
-		</div>
+		
 	</div>
 
 	<div class="row">

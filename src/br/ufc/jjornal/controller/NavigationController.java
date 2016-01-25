@@ -6,11 +6,17 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.ufc.jjornal.conf.Config;
+import br.ufc.jjornal.dao.ComentarioDAO;
+import br.ufc.jjornal.dao.NoticiaDAO;
 import br.ufc.jjornal.dao.SecaoDAO;
+import br.ufc.jjornal.model.Comentario;
+import br.ufc.jjornal.model.Noticia;
 import br.ufc.jjornal.model.Secao;
 import br.ufc.jjornal.model.User;
 
@@ -20,12 +26,20 @@ public class NavigationController {
 	
 	@Autowired
 	private SecaoDAO secaoDao;
+	
+	@Autowired
+	private NoticiaDAO noticiaDao;
+	
+	@Autowired
+	private ComentarioDAO comentarioDao;
 
 	@RequestMapping("/index")
 	public ModelAndView home(){
 		ModelAndView modelAndView = new ModelAndView("index");
 		List<Secao> secoes = secaoDao.listar();	
+		List<Noticia> noticias = noticiaDao.listar();
 		modelAndView.addObject("secoes", secoes);
+		modelAndView.addObject("noticias", noticias);
 		return modelAndView;
 	}
 	
@@ -100,6 +114,38 @@ public class NavigationController {
 		modelAndView = new ModelAndView("index");
 		modelAndView.addObject("secoes", secoes);
 		return modelAndView;		
+	}
+	
+	@RequestMapping("noticia/{id}")
+	public ModelAndView noticia(@PathVariable Integer id){
+		Noticia noticia = noticiaDao.findById(id);
+		List<Secao> secoes = secaoDao.listar();	
+		List<Comentario> comentarios = comentarioDao.findComentariosByNoticia(noticia);
+		
+		System.out.println(noticia.getTitulo());
+
+		ModelAndView modelAndView = new ModelAndView("noticia");
+		modelAndView.addObject("secoes", secoes);
+		modelAndView.addObject("noticia", noticia);
+		modelAndView.addObject("comentarios", comentarios);
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping("secoes/{id}")
+	public ModelAndView secoes(@PathVariable Integer id){
+		Secao secao = secaoDao.findById(id);
+		List<Secao> secoes = secaoDao.listar();	
+		
+		List<Noticia> noticias = noticiaDao.findNoticiasBySecao(secao);
+
+		ModelAndView modelAndView = new ModelAndView("secoes");
+		modelAndView.addObject("secoes", secoes);
+		modelAndView.addObject("secao", secao);
+		modelAndView.addObject("noticias", noticias);
+
+		
+		return modelAndView;
 	}
 	
 }

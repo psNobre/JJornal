@@ -8,12 +8,11 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import br.ufc.jjornal.dao.interfaces.DAO;
-import br.ufc.jjornal.dao.interfaces.ISecaoDAO;
 import br.ufc.jjornal.logger.Logger;
 import br.ufc.jjornal.model.Secao;
 
 @Repository
-public class SecaoDAO implements DAO<Secao>, ISecaoDAO {
+public class SecaoDAO implements DAO<Secao>{
 	private static final String TAG = SecaoDAO.class.getName();
 	
 	@PersistenceContext
@@ -53,10 +52,6 @@ public class SecaoDAO implements DAO<Secao>, ISecaoDAO {
 		
 	}
 
-	@Override
-	public Secao findByTitulo(String titulo) {
-		String hql = "select s from secao s where s.titulo = :titulo";
-		return this.manager.createQuery(hql, Secao.class).setParameter("titulo", titulo).getSingleResult();
-	}
+
 
 }

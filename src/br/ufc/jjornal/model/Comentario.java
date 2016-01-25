@@ -21,6 +21,10 @@ public class Comentario {
 	@ManyToOne(fetch=FetchType.LAZY) 
 	@JoinColumn(name="id_user") 
 	private User user;
+	
+	@ManyToOne(fetch=FetchType.LAZY) 
+	@JoinColumn(name="id_noticia") 
+	private Noticia noticia;
 
 	public Long getId() {
 		return id;
@@ -45,6 +49,16 @@ public class Comentario {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	public Noticia getNoticia() {
+		return noticia;
+	}
+
+	public void setNoticia(Noticia noticia) {
+		this.noticia = noticia;
+	}
+	
+	
 	
 	
 	
