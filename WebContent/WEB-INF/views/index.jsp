@@ -37,7 +37,7 @@
 			<ul class="dropdown">
 				<c:forEach items="${ secoes }" var="secao">
    					<li class="active"><a class="work" href="secoes/${secao.id}">${secao.titulo}</a></li>
-
+   					
    				</c:forEach>
 		</ul></li>
 		
