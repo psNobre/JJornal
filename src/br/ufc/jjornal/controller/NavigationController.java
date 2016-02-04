@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.ufc.jjornal.conf.Config;
+import br.ufc.jjornal.dao.ClassificadoDAO;
 import br.ufc.jjornal.dao.ComentarioDAO;
 import br.ufc.jjornal.dao.NoticiaDAO;
 import br.ufc.jjornal.dao.SecaoDAO;
+import br.ufc.jjornal.model.Classificado;
 import br.ufc.jjornal.model.Comentario;
 import br.ufc.jjornal.model.Noticia;
 import br.ufc.jjornal.model.Secao;
@@ -32,6 +34,9 @@ public class NavigationController {
 	
 	@Autowired
 	private ComentarioDAO comentarioDao;
+	
+	@Autowired
+	private ClassificadoDAO classificadoDao;
 
 	@RequestMapping("/index")
 	public ModelAndView home(){
@@ -77,15 +82,26 @@ public class NavigationController {
 	}
 	
 	@RequestMapping("/listaNoticias")
-	public String listaNoticias(){
-		return "lista_noticias";
+	public ModelAndView listaNoticias(){
+		ModelAndView modelAndView = new ModelAndView("lista_noticias");
+		List<Secao> secoes = secaoDao.listar();	
+		List<Noticia> noticias = noticiaDao.listar();
+		modelAndView.addObject("secoes", secoes);
+		modelAndView.addObject("noticias", noticias);
+		return modelAndView;
 	}
 	
-	@RequestMapping("/listaClassificados")
-	public ModelAndView listaClassificados(){
-		ModelAndView modelAndView = new ModelAndView("lista_classificados");
+	@RequestMapping("noticiaRmv/{id}")
+	public ModelAndView noticiaRmv(@PathVariable Integer id){
+		Noticia noticia = noticiaDao.findById(id);
+		noticiaDao.remover(noticia);
+		
+		ModelAndView modelAndView = new ModelAndView("lista_noticias");
 		List<Secao> secoes = secaoDao.listar();	
+		List<Noticia> noticias = noticiaDao.listar();
 		modelAndView.addObject("secoes", secoes);
+		modelAndView.addObject("noticias", noticias);
+		
 		return modelAndView;
 	}
 	
@@ -144,6 +160,28 @@ public class NavigationController {
 		modelAndView.addObject("secao", secao);
 		modelAndView.addObject("noticias", noticias);
 
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping("/listaClassificados")
+	public ModelAndView listaClassificados(){
+		ModelAndView modelAndView = new ModelAndView("lista_classificados");
+		List<Secao> secoes = secaoDao.listar();	
+		List<Classificado> classificados = classificadoDao.listar();
+		modelAndView.addObject("secoes", secoes);
+		modelAndView.addObject("classificados", classificados);
+		return modelAndView;
+	}
+	
+	@RequestMapping("classificado/{id}")
+	public ModelAndView calssificado(@PathVariable Integer id){
+		Classificado classificado = classificadoDao.findById(id);
+		List<Secao> secoes = secaoDao.listar();	
+		
+		ModelAndView modelAndView = new ModelAndView("classificado");
+		modelAndView.addObject("secoes", secoes);
+		modelAndView.addObject("classificado", classificado);
 		
 		return modelAndView;
 	}

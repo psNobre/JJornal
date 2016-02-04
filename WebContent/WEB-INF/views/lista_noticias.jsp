@@ -35,7 +35,25 @@
 		<h1>Lista de Notícias</h1>
 	</div>
 
-	//TODO
+		<div class="row">
+
+		<ul
+			class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4"
+			data-clearing>	
+			
+			<c:forEach items="${ noticias }" var="noticia">
+   					<li><a href="noticia/${noticia.id}"><img data-caption="caption here..."
+					src="http://placehold.it/800x500&text=[img]"><br><span
+					style="font-size: small">${noticia.titulo}</span></a>
+					<a href=noticiaRmv/${noticia.id}><span>Deletar</span></a>
+					</li>
+					
+					
+   			</c:forEach>
+		
+		</ul>
+		
+	</div>
 
 	<footer class="row">
 	<div class="large-12 columns">

@@ -45,7 +45,23 @@
 		<h1>Classificados</h1>
 	</div>
 
-	//TODO
+	<div class="row">
+
+		<ul
+			class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4"
+			data-clearing>	
+			
+			<c:forEach items="${ classificados }" var="classificado">
+   					<li><a href="classificado/${classificado.id}"><img data-caption="caption here..."
+					src="http://placehold.it/800x500&text=[img]"><br><span
+					style="font-size: small">${classificado.titulo}</span></a>
+					</li>	
+					
+   			</c:forEach>
+		
+		</ul>
+		
+	</div>
 
 	<footer class="row">
 	<div class="large-12 columns">
