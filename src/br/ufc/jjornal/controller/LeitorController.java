@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.ufc.jjornal.conf.Config;
+import br.ufc.jjornal.dao.ClassificadoDAO;
 import br.ufc.jjornal.dao.ComentarioDAO;
 import br.ufc.jjornal.dao.NoticiaDAO;
 import br.ufc.jjornal.dao.PapelDAO;
 import br.ufc.jjornal.dao.SecaoDAO;
 import br.ufc.jjornal.dao.UserDAO;
+import br.ufc.jjornal.model.Classificado;
 import br.ufc.jjornal.model.Comentario;
 import br.ufc.jjornal.model.Noticia;
 import br.ufc.jjornal.model.Papel;
@@ -42,6 +44,9 @@ public class LeitorController {
 	
 	@Autowired
 	private NoticiaDAO noticiaDAO;
+	
+	@Autowired
+	private ClassificadoDAO classificadoDAO;
 	
 	@RequestMapping("/registerLeitor")
 	public String registerUser(User user) {		
@@ -78,6 +83,32 @@ public class LeitorController {
 					comentario.setUser(user);
 					comentario.setNoticia(noticia);
 					comentarioDAO.salvar(comentario);
+					
+				}
+			}
+			
+		}
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping("/cadastrarClassificado/{id}")
+	public ModelAndView cadastrarClassificado(HttpSession session, String texto, @PathVariable Integer id) {
+		User user = (User) session.getAttribute("UserLogado");
+		
+		List<Secao> secoes = secaoDAO.listar();	
+		Classificado classificado = classificadoDAO.findById(id);
+		
+		ModelAndView modelAndView =  new ModelAndView("classificado");
+		modelAndView.addObject("classificado", classificado);
+		modelAndView.addObject("secoes", secoes);
+		
+		if (user != null) {
+			for (Papel papel : user.getPapeis()) {
+				if (papel.getPapel().equals(Config.LEITOR)) {	
+					classificado.setMelhorOferta(Float.parseFloat(texto));
+					classificado.setUser(user);
+					classificadoDAO.alterar(classificado);
 					
 				}
 			}

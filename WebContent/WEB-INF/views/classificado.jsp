@@ -71,6 +71,33 @@
 		<hr>
 
 	</div>
+	
+	<form action="cadastrarClassificado/${classificado.id}" method="post">
+
+		<div class="row collapse">
+			<div class="large-6 columns">
+				<div class="row collapse prefix-radius">
+					<div class="small-3 columns">
+						<span class="prefix">Nova Oferta</span>
+					</div>
+					<div class="small-9 columns">
+						<input type="text" placeholder="Nova Oferta" name="melhorOferta" required
+							x-moz-errormessage="Preencha Sua Nova Oferta.">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row collapse">
+			<div class="large-6 columns">
+				<div class="row collapse prefix-radius">
+					<div class="small-9 columns">
+						<input class="button success" type="submit" value="OFERTAR"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
 
 		<footer class="row">
 		<div class="large-12 columns">
